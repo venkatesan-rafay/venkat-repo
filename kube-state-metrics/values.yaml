@@ -47,7 +47,6 @@ revisionHistoryLimit: 10
 # List of additional cli arguments to configure kube-state-metrics
 # for example: --enable-gzip-encoding, --log-file, etc.
 # all the possible args can be found here: https://github.com/kubernetes/kube-state-metrics/blob/master/docs/cli-arguments.md
-extraArgs: []
 
 service:
   port: 8080
@@ -103,7 +102,7 @@ kubeRBACProxy:
   # List of additional cli arguments to configure kube-rbac-prxy
   # for example: --tls-cipher-suites, --log-file, etc.
   # all the possible args can be found here: https://github.com/brancz/kube-rbac-proxy#usage
-  extraArgs: []
+  extraArgs: [metric-labels-allowlist: certificatesigningrequests=[*],configmaps=[*],cronjobs=[*],daemonsets=[*],deployments=[*],endpoints=[*],horizontalpodautoscalers=[*],ingresses=[*],jobs=[*],limitranges=[*],namespaces=[*],nodes=[*],persistentvolumeclaims=[*],persistentvolumes=[*],poddisruptionbudgets=[*],pods=[*],replicasets=[*],replicationcontrollers=[*],resourcequotas=[*],secrets=[*],services=[*],statefulsets=[*],storageclasses=[*]]
 
   ## Specify security settings for a Container
   ## Allows overrides and additional options compared to (Pod) securityContext
